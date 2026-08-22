@@ -135,6 +135,14 @@
             height: 150px;
             background: #11112a;
             border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .case-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* ================= BONUSES ================= */
@@ -433,14 +441,16 @@
 
                     <svg class="telegram-star" viewBox="0 0 24 24">
                         <defs>
-                            <linearGradient id="starHome"
-                                x1="0%" y1="0%"
-                                x2="100%" y2="100%">
-
+                            <linearGradient
+                                id="starHome"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="100%"
+                            >
                                 <stop offset="0%" stop-color="#fff176"/>
                                 <stop offset="45%" stop-color="#ffd54f"/>
                                 <stop offset="100%" stop-color="#ffb300"/>
-
                             </linearGradient>
                         </defs>
 
@@ -460,7 +470,15 @@
 
         <div class="cases-grid">
 
-            <div class="case-box"></div>
+            <!-- ПЕРВЫЙ КЕЙС -->
+            <div class="case-box">
+                <img
+                    src="images/cases/summer-case.png"
+                    alt="Summer Case"
+                >
+            </div>
+
+            <!-- Остальные пока пустые -->
             <div class="case-box"></div>
             <div class="case-box"></div>
             <div class="case-box"></div>
@@ -486,7 +504,6 @@
             <div class="header-right">
 
                 <div class="balance">
-
                     <span>0</span>
 
                     <svg class="telegram-star" viewBox="0 0 24 24">
@@ -676,10 +693,8 @@
         class="nav-item active"
         data-page="home-page"
     >
-
         <span class="nav-icon">🏠</span>
         <span>ГЛАВНАЯ</span>
-
     </button>
 
 
@@ -688,12 +703,9 @@
         class="nav-item"
         data-page="games-page"
     >
-
         <span class="nav-icon">🎮</span>
         <span>ИГРЫ</span>
-
         <span class="badge-dot"></span>
-
     </button>
 
 
@@ -702,10 +714,8 @@
         class="nav-item"
         data-page="bonuses-page"
     >
-
         <span class="nav-icon">🎁</span>
         <span>БОНУСЫ</span>
-
     </button>
 
 
@@ -714,10 +724,8 @@
         class="nav-item"
         data-page="profile-page"
     >
-
         <span class="nav-icon">👤</span>
         <span>ПРОФИЛЬ</span>
-
     </button>
 
 </div>
@@ -861,8 +869,6 @@
                 item.getAttribute("data-page");
 
 
-            /* Активная кнопка */
-
             navItems.forEach(function(nav) {
 
                 nav.classList.remove("active");
@@ -871,8 +877,6 @@
 
             item.classList.add("active");
 
-
-            /* Страницы */
 
             pages.forEach(function(page) {
 
@@ -918,4 +922,3 @@
 </script>
 
 </body>
-</html>
