@@ -132,9 +132,43 @@
         }
 
         .case-box {
-            height: 150px;
+            height: 190px;
             background: #11112a;
             border-radius: 16px;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-image {
+            width: 100%;
+            height: 145px;
+
+            object-fit: cover;
+            display: block;
+
+            border-radius: 16px 16px 0 0;
+        }
+
+        .case-info {
+            padding: 5px 8px 7px 8px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .case-name {
+            font-size: 14px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .case-price {
+            font-size: 12px;
+            font-weight: 700;
+            color: #777797;
         }
 
         /* ================= BONUSES ================= */
@@ -460,7 +494,28 @@
 
         <div class="cases-grid">
 
-            <div class="case-box"></div>
+            <div class="case-box">
+
+                <img
+                    class="case-image"
+                    src="images/case1.jpg"
+                    alt="Начинающий"
+                >
+
+                <div class="case-info">
+
+                    <div class="case-name">
+                        Начинающий
+                    </div>
+
+                    <div class="case-price">
+                        Бесплатно
+                    </div>
+
+                </div>
+
+            </div>
+
             <div class="case-box"></div>
             <div class="case-box"></div>
             <div class="case-box"></div>
@@ -876,46 +931,4 @@
 
             pages.forEach(function(page) {
 
-                page.classList.remove("active");
-
-            });
-
-
-            var selectedPage =
-                document.getElementById(pageId);
-
-
-            if (selectedPage) {
-
-                selectedPage.classList.add("active");
-
-            }
-
-        });
-
-    });
-
-
-    /* ================================================= */
-    /* TELEGRAM-КАНАЛ */
-    /* ================================================= */
-
-    var telegramBonus =
-        document.getElementById("telegram-bonus");
-
-
-    telegramBonus.addEventListener(
-        "click",
-        function() {
-
-            tg.openTelegramLink(
-                "https://t.me/slowngifts"
-            );
-
-        }
-    );
-
-</script>
-
-</body>
-</html>
+                pag
