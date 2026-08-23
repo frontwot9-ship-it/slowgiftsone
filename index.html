@@ -132,43 +132,68 @@
         }
 
         .case-box {
-            height: 190px;
+            height: 150px;
             background: #11112a;
             border-radius: 16px;
             overflow: hidden;
-
-            display: flex;
-            flex-direction: column;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .case-image {
-            width: 100%;
-            height: 145px;
+        .case-box:active {
+            transform: scale(0.95);
+        }
 
+        .case-box img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
-
-            border-radius: 16px 16px 0 0;
         }
 
-        .case-info {
-            padding: 5px 8px 7px 8px;
-
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
+        .case-box .case-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            padding: 6px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            backdrop-filter: blur(4px);
         }
 
-        .case-name {
-            font-size: 14px;
-            font-weight: 800;
-            color: #ffffff;
-        }
-
-        .case-price {
+        .case-box .case-price {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.8);
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: 700;
-            color: #777797;
+            color: #ffd54f;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .case-box .case-price svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .case-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #666681;
+            font-size: 14px;
         }
 
         /* ================= BONUSES ================= */
@@ -463,7 +488,7 @@
             <div class="header-right">
 
                 <div class="balance">
-                    <span>0</span>
+                    <span id="balance-home">0</span>
 
                     <svg class="telegram-star" viewBox="0 0 24 24">
                         <defs>
@@ -485,7 +510,7 @@
                     </svg>
                 </div>
 
-                <div class="plus-button">+</div>
+                <div class="plus-button" id="plus-home">+</div>
 
             </div>
         </div>
@@ -494,31 +519,18 @@
 
         <div class="cases-grid">
 
-            <div class="case-box">
-
-                <img
-                    class="case-image"
-                    src="images/case1.jpg"
-                    alt="Начинающий"
-                >
-
-                <div class="case-info">
-
-                    <div class="case-name">
-                        Начинающий
-                    </div>
-
-                    <div class="case-price">
-                        Бесплатно
-                    </div>
-
-                </div>
-
+            <div class="case-box" id="case-1">
+                <div class="case-loading">⏳</div>
             </div>
-
-            <div class="case-box"></div>
-            <div class="case-box"></div>
-            <div class="case-box"></div>
+            <div class="case-box" id="case-2">
+                <div class="case-loading">⏳</div>
+            </div>
+            <div class="case-box" id="case-3">
+                <div class="case-loading">⏳</div>
+            </div>
+            <div class="case-box" id="case-4">
+                <div class="case-loading">⏳</div>
+            </div>
 
         </div>
 
@@ -542,7 +554,7 @@
 
                 <div class="balance">
 
-                    <span>0</span>
+                    <span id="balance-games">0</span>
 
                     <svg class="telegram-star" viewBox="0 0 24 24">
 
@@ -564,10 +576,18 @@
 
         <div class="cases-grid">
 
-            <div class="case-box"></div>
-            <div class="case-box"></div>
-            <div class="case-box"></div>
-            <div class="case-box"></div>
+            <div class="case-box" id="game-1">
+                <div class="case-loading">⏳</div>
+            </div>
+            <div class="case-box" id="game-2">
+                <div class="case-loading">⏳</div>
+            </div>
+            <div class="case-box" id="game-3">
+                <div class="case-loading">⏳</div>
+            </div>
+            <div class="case-box" id="game-4">
+                <div class="case-loading">⏳</div>
+            </div>
 
         </div>
 
@@ -591,7 +611,7 @@
 
                 <div class="balance">
 
-                    <span>0</span>
+                    <span id="balance-bonuses">0</span>
 
                     <svg class="telegram-star" viewBox="0 0 24 24">
 
@@ -649,7 +669,7 @@
 
                 <div class="balance">
 
-                    <span>0</span>
+                    <span id="balance-profile">0</span>
 
                     <svg class="telegram-star" viewBox="0 0 24 24">
 
@@ -785,7 +805,6 @@
     /* ================================================= */
 
     var tg = window.Telegram.WebApp;
-
     tg.expand();
 
 
@@ -873,62 +892,4 @@
             Date.now();
 
         var oneDay =
-            24 * 60 * 60 * 1000;
-
-        var days =
-            Math.floor(
-                (now - start) / oneDay
-            );
-
-        if (days < 0) {
-            days = 0;
-        }
-
-        daysElement.textContent =
-            String(days);
-    }
-
-
-    updateDays();
-
-    setInterval(
-        updateDays,
-        60000
-    );
-
-
-    /* ================================================= */
-    /* НАВИГАЦИЯ */
-    /* ================================================= */
-
-    var navItems =
-        document.querySelectorAll(".nav-item");
-
-    var pages =
-        document.querySelectorAll(".page");
-
-
-    navItems.forEach(function(item) {
-
-        item.addEventListener("click", function() {
-
-            var pageId =
-                item.getAttribute("data-page");
-
-
-            /* Активная кнопка */
-
-            navItems.forEach(function(nav) {
-
-                nav.classList.remove("active");
-
-            });
-
-            item.classList.add("active");
-
-
-            /* Страницы */
-
-            pages.forEach(function(page) {
-
-                pag
+            24 * 60 * 60 *
