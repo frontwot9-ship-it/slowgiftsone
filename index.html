@@ -2,9 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0,
-                   maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Slow Gifts</title>
 
@@ -17,34 +15,12 @@
             box-sizing: border-box;
         }
 
-        html,
         body {
-            width: 100%;
-            min-height: 100%;
-        }
-
-        body {
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                sans-serif;
-
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: #0a0a1a;
             color: #ffffff;
-
             min-height: 100vh;
-
-            padding:
-                16px
-                16px
-                100px
-                16px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 16px 16px 95px 16px;
         }
 
         .container {
@@ -53,9 +29,77 @@
             margin: 0 auto;
         }
 
-        /* =========================
-           СТРАНИЦЫ
-        ========================= */
+        /* ================= HEADER ================= */
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 8px 16px 8px;
+        }
+
+        .logo {
+            background: #11112a;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 28px;
+            font-weight: 700;
+            white-space: nowrap;
+            text-shadow: 0 0 8px rgba(255,255,255,0.25);
+        }
+
+        .slow {
+            color: #ffffff;
+        }
+
+        .gifts {
+            color: #9b59b6;
+            text-shadow: 0 0 10px rgba(155,89,182,0.7);
+        }
+
+        /* ================= BALANCE ================= */
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .balance {
+            height: 34px;
+            padding: 0 11px;
+            border-radius: 12px;
+            background: #11112a;
+
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .telegram-star {
+            width: 17px;
+            height: 17px;
+        }
+
+        .plus-button {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: #11112a;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #2f9cff;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        /* ================= PAGES ================= */
 
         .page {
             display: none;
@@ -66,277 +110,89 @@
             display: block;
         }
 
-        /* =========================
-           ХЕДЕР
-        ========================= */
-
-        .header {
-            width: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding:
-                8px
-                8px
-                16px
-                8px;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-
-            background: #11112a;
-
-            padding: 6px 12px;
-
-            border-radius: 12px;
-
-            white-space: nowrap;
-
-            text-shadow:
-                0 0 8px
-                rgba(255, 255, 255, 0.25);
-        }
-
-        .logo .slow {
-            color: #ffffff;
-        }
-
-        .logo .gifts {
-            color: #9b59b6;
-
-            text-shadow:
-                0 0 10px
-                rgba(155, 89, 182, 0.65);
-        }
-
-        /* =========================
-           БАЛАНС
-        ========================= */
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-left: 10px;
-        }
-
-        .balance {
-            height: 40px;
-
-            background: #11112a;
-
-            padding:
-                7px
-                12px;
-
-            border-radius: 12px;
-
-            font-size: 16px;
-            font-weight: 600;
-
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .telegram-star {
-            width: 17px;
-            height: 17px;
-            display: block;
-        }
-
-        .plus-button {
-            width: 40px;
-            height: 40px;
-
-            background: #11112a;
-
-            border-radius: 12px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: #2f9cff;
-
-            font-size: 27px;
-            font-weight: 500;
-
-            cursor: pointer;
-
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* =========================
-           БОЛЬШОЙ КВАДРАТ
-        ========================= */
+        /* ================= MAIN / GAMES ================= */
 
         .roulette-box {
             width: 100%;
             height: 150px;
+            margin-top: 12px;
 
             background: #11112a;
-
             border-radius: 16px;
-
-            margin-top: 12px;
         }
-
-        /* =========================
-           СЕТКА КЕЙСОВ
-        ========================= */
 
         .cases-grid {
             width: 100%;
+            margin-top: 16px;
+            padding: 0 4px;
 
             display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 12px;
-
-            margin-top: 16px;
-
-            padding: 0 4px;
         }
 
         .case-box {
-            width: 100%;
             height: 150px;
-
             background: #11112a;
-
-            border-radius: 16px;
-
-            overflow: hidden;
-
-            position: relative;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .case-box img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            display: block;
-
             border-radius: 16px;
         }
 
-        /* Пустой кейс */
-
-        .empty-case {
-            width: 100%;
-            height: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: #777797;
-
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* =========================
-           БОНУСЫ
-        ========================= */
+        /* ================= BONUSES ================= */
 
         .bonus-grid {
             width: 100%;
+            margin-top: 16px;
+            padding: 0 4px;
 
             display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 12px;
-
-            margin-top: 16px;
-
-            padding: 0 4px;
         }
 
         .bonus-box {
-            width: 100%;
             height: 110px;
-
             background: #11112a;
-
             border-radius: 16px;
-
-            overflow: hidden;
         }
 
         .telegram-bonus {
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             padding: 12px;
-
             text-align: center;
 
             cursor: pointer;
-
-            -webkit-tap-highlight-color: transparent;
-
-            transition:
-                transform 0.15s ease,
-                background 0.15s ease;
-        }
-
-        .telegram-bonus:active {
-            transform: scale(0.97);
         }
 
         .telegram-bonus-text {
             font-size: 14px;
             line-height: 1.25;
-
             font-weight: 800;
-
-            color: #ffffff;
         }
 
-        /* =========================
-           ПРОФИЛЬ
-        ========================= */
+        /* ================= PROFILE ================= */
 
         .profile-box {
             width: 100%;
             height: 190px;
 
-            background: #11112a;
-
-            border-radius: 16px;
-
             margin-top: 12px;
 
-            position: relative;
+            background: #11112a;
+            border-radius: 16px;
 
-            display: flex;
-            align-items: flex-start;
+            position: relative;
         }
 
         .profile-user {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+
             display: flex;
             align-items: center;
-
-            margin-left: 16px;
-            margin-top: 16px;
         }
 
         .profile-avatar {
@@ -344,49 +200,43 @@
             height: 72px;
 
             border-radius: 50%;
+            overflow: hidden;
 
             background: #1b1b38;
-
-            border:
-                2px solid
-                rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255,255,255,0.08);
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            overflow: hidden;
-
-            flex-shrink: 0;
-
             font-size: 32px;
+            flex-shrink: 0;
         }
 
         .profile-avatar img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
-            display: block;
         }
 
         .profile-username {
             margin-left: 8px;
 
             font-size: 18px;
-            font-weight: 900;
+            font-weight: 1000;
 
             color: #ffffff;
 
             max-width: 200px;
 
+            white-space: nowrap;
             overflow: hidden;
-
             text-overflow: ellipsis;
 
-            white-space: nowrap;
+            -webkit-text-stroke: 1px #ffffff;
         }
+
+        /* ================= DAYS ================= */
 
         .profile-small-box {
             position: absolute;
@@ -398,111 +248,79 @@
             height: 72px;
 
             background: #1b1b38;
-
             border-radius: 14px;
+
+            padding: 8px 5px 7px 5px;
 
             display: flex;
             flex-direction: column;
-
             align-items: center;
             justify-content: space-between;
-
-            padding:
-                8px
-                5px
-                7px
-                5px;
         }
 
         .days-title {
             font-size: 13px;
             font-weight: 700;
-
-            color: #ffffff;
         }
 
         .days-count {
             font-size: 20px;
             font-weight: 800;
-
-            color: #ffffff;
         }
 
-        /* =========================
-           NFT
-        ========================= */
+        /* ================= NFT ================= */
 
         .profile-nft-box {
             width: calc(100% - 16px);
-
             min-height: 180px;
 
+            margin: 16px auto 0 auto;
+
             background: #11112a;
-
             border-radius: 16px;
-
-            margin:
-                16px
-                auto
-                0
-                auto;
 
             padding: 16px;
 
-            overflow: hidden;
-
             display: flex;
-
             align-items: center;
             justify-content: center;
+
+            overflow: hidden;
         }
 
         .no-nft-text {
-            font-size: 15px;
-
-            font-weight: 600;
-
             color: #777797;
-
+            font-size: 15px;
+            font-weight: 600;
             text-align: center;
         }
 
-        /* =========================
-           НИЖНЯЯ НАВИГАЦИЯ
-        ========================= */
+        /* ================= BOTTOM NAV ================= */
 
         .bottom-nav {
             position: fixed;
 
-            bottom: 10px;
-
             left: 12px;
             right: 12px;
+            bottom: 10px;
 
-            height: 76px;
-
-            background:
-                rgba(17, 17, 42, 0.96);
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.06);
-
-            border-radius: 22px;
+            height: 66px;
 
             padding: 6px;
 
             display: flex;
-
             align-items: center;
             justify-content: space-around;
+
+            background: rgba(17,17,42,0.96);
+
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
 
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
 
-            box-shadow:
-                0 8px 30px
-                rgba(0, 0, 0, 0.35);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.35);
 
             z-index: 1000;
         }
@@ -511,115 +329,73 @@
             position: relative;
 
             width: 25%;
-            height: 62px;
+            height: 54px;
+
+            border: none;
+            border-radius: 15px;
+
+            background: transparent;
+
+            color: #666681;
 
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
             justify-content: center;
 
             gap: 2px;
 
-            background: transparent;
-
-            border: none;
-
-            color: #666681;
-
-            font-size: 10px;
-
+            font-size: 9px;
             font-weight: 700;
 
             cursor: pointer;
 
-            border-radius: 17px;
-
-            transition:
-                color 0.2s ease,
-                background 0.2s ease,
-                transform 0.2s ease;
-
             -webkit-tap-highlight-color: transparent;
         }
 
-        .nav-item .nav-icon {
-            font-size: 25px;
-
-            line-height: 27px;
+        .nav-icon {
+            font-size: 22px;
+            line-height: 24px;
 
             filter: grayscale(1);
-
             opacity: 0.65;
-
-            transition:
-                filter 0.2s ease,
-                opacity 0.2s ease,
-                transform 0.2s ease;
         }
 
         .nav-item.active {
             color: #b56cff;
-
-            background:
-                rgba(155, 89, 182, 0.15);
-
-            box-shadow:
-                0 0 20px
-                rgba(155, 89, 182, 0.08);
+            background: rgba(155,89,182,0.13);
         }
 
         .nav-item.active .nav-icon {
             filter: none;
-
             opacity: 1;
 
-            transform:
-                translateY(-1px);
-
-            text-shadow:
-                0 0 10px
-                rgba(181, 108, 255, 0.7);
+            text-shadow: 0 0 10px rgba(181,108,255,0.7);
         }
 
         .nav-item.active::before {
             content: "";
 
             position: absolute;
-
             top: 0;
             left: 50%;
 
-            transform:
-                translateX(-50%);
+            transform: translateX(-50%);
 
             width: 24px;
             height: 3px;
 
             background: #b56cff;
+            border-radius: 0 0 6px 6px;
 
-            border-radius:
-                0 0 6px 6px;
-
-            box-shadow:
-                0 0 10px
-                rgba(181, 108, 255, 0.7);
+            box-shadow: 0 0 10px rgba(181,108,255,0.7);
         }
-
-        .nav-item:active {
-            transform: scale(0.94);
-        }
-
-        /* =========================
-           КРАСНАЯ ТОЧКА
-        ========================= */
 
         .badge-dot {
             position: absolute;
 
-            top: 7px;
-            right: calc(50% - 20px);
+            top: 5px;
+            right: calc(50% - 19px);
 
             width: 7px;
             height: 7px;
@@ -628,9 +404,7 @@
 
             border-radius: 50%;
 
-            border:
-                2px solid
-                #11112a;
+            border: 2px solid #11112a;
         }
     </style>
 </head>
@@ -639,114 +413,45 @@
 
 <div class="container">
 
-    <!-- =====================================================
-         ГЛАВНАЯ
-    ===================================================== -->
+    <!-- ================================================= -->
+    <!-- ГЛАВНАЯ -->
+    <!-- ================================================= -->
 
-    <div
-        class="page active"
-        id="home-page"
-    >
+    <div class="page active" id="home-page">
 
         <div class="header">
 
-            <span class="logo">
+            <div class="logo">
                 <span class="slow">Slow</span>
                 <span class="gifts">Gifts</span>
-            </span>
+            </div>
 
             <div class="header-right">
 
                 <div class="balance">
-                    0
+                    <span>0</span>
 
-                    <svg
-                        class="telegram-star"
-                        viewBox="0 0 24 24"
-                    >
+                    <svg class="telegram-star" viewBox="0 0 24 24">
+                        <defs>
+                            <linearGradient id="starHome"
+                                x1="0%" y1="0%"
+                                x2="100%" y2="100%">
+
+                                <stop offset="0%" stop-color="#fff176"/>
+                                <stop offset="45%" stop-color="#ffd54f"/>
+                                <stop offset="100%" stop-color="#ffb300"/>
+
+                            </linearGradient>
+                        </defs>
+
                         <path
-                            fill="#ffd54f"
+                            fill="url(#starHome)"
                             d="M12 1.8l2.75 5.57 6.15.89-4.45 4.34 1.05 6.13L12 15.84l-5.5 2.89 1.05-6.13L3.1 8.26l6.15-.89L12 1.8z"
                         />
                     </svg>
                 </div>
 
-                <div class="plus-button">
-                    +
-                </div>
-
-            </div>
-        </div>
-
-        <div class="roulette-box"></div>
-
-        <div class="cases-grid">
-
-            <!-- SUMMER CASE -->
-
-            <div class="case-box">
-
-                <img
-                    src="images/cases/summer.png"
-                    alt="Summer Case"
-                >
-
-            </div>
-
-            <!-- Пустые места -->
-
-            <div class="case-box">
-                <div class="empty-case"></div>
-            </div>
-
-            <div class="case-box">
-                <div class="empty-case"></div>
-            </div>
-
-            <div class="case-box">
-                <div class="empty-case"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         ИГРЫ
-    ===================================================== -->
-
-    <div
-        class="page"
-        id="games-page"
-    >
-
-        <div class="header">
-
-            <span class="logo">
-                <span class="slow">Slow</span>
-                <span class="gifts">Gifts</span>
-            </span>
-
-            <div class="header-right">
-
-                <div class="balance">
-                    0
-
-                    <svg
-                        class="telegram-star"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            fill="#ffd54f"
-                            d="M12 1.8l2.75 5.57 6.15.89-4.45 4.34 1.05 6.13L12 15.84l-5.5 2.89 1.05-6.13L3.1 8.26l6.15-.89L12 1.8z"
-                        />
-                    </svg>
-                </div>
-
-                <div class="plus-button">
-                    +
-                </div>
+                <div class="plus-button">+</div>
 
             </div>
         </div>
@@ -756,11 +461,8 @@
         <div class="cases-grid">
 
             <div class="case-box"></div>
-
             <div class="case-box"></div>
-
             <div class="case-box"></div>
-
             <div class="case-box"></div>
 
         </div>
@@ -768,41 +470,86 @@
     </div>
 
 
-    <!-- =====================================================
-         БОНУСЫ
-    ===================================================== -->
+    <!-- ================================================= -->
+    <!-- ИГРЫ -->
+    <!-- ================================================= -->
 
-    <div
-        class="page"
-        id="bonuses-page"
-    >
+    <div class="page" id="games-page">
 
         <div class="header">
 
-            <span class="logo">
+            <div class="logo">
                 <span class="slow">Slow</span>
                 <span class="gifts">Gifts</span>
-            </span>
+            </div>
 
             <div class="header-right">
 
                 <div class="balance">
-                    0
 
-                    <svg
-                        class="telegram-star"
-                        viewBox="0 0 24 24"
-                    >
+                    <span>0</span>
+
+                    <svg class="telegram-star" viewBox="0 0 24 24">
+
                         <path
                             fill="#ffd54f"
                             d="M12 1.8l2.75 5.57 6.15.89-4.45 4.34 1.05 6.13L12 15.84l-5.5 2.89 1.05-6.13L3.1 8.26l6.15-.89L12 1.8z"
                         />
+
                     </svg>
+
                 </div>
 
-                <div class="plus-button">
-                    +
+                <div class="plus-button">+</div>
+
+            </div>
+        </div>
+
+        <div class="roulette-box"></div>
+
+        <div class="cases-grid">
+
+            <div class="case-box"></div>
+            <div class="case-box"></div>
+            <div class="case-box"></div>
+            <div class="case-box"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- БОНУСЫ -->
+    <!-- ================================================= -->
+
+    <div class="page" id="bonuses-page">
+
+        <div class="header">
+
+            <div class="logo">
+                <span class="slow">Slow</span>
+                <span class="gifts">Gifts</span>
+            </div>
+
+            <div class="header-right">
+
+                <div class="balance">
+
+                    <span>0</span>
+
+                    <svg class="telegram-star" viewBox="0 0 24 24">
+
+                        <path
+                            fill="#ffd54f"
+                            d="M12 1.8l2.75 5.57 6.15.89-4.45 4.34 1.05 6.13L12 15.84l-5.5 2.89 1.05-6.13L3.1 8.26l6.15-.89L12 1.8z"
+                        />
+
+                    </svg>
+
                 </div>
+
+                <div class="plus-button">+</div>
 
             </div>
         </div>
@@ -811,7 +558,7 @@
 
             <div
                 class="bonus-box telegram-bonus"
-                onclick="openTelegramChannel()"
+                id="telegram-bonus"
             >
 
                 <div class="telegram-bonus-text">
@@ -822,9 +569,7 @@
             </div>
 
             <div class="bonus-box"></div>
-
             <div class="bonus-box"></div>
-
             <div class="bonus-box"></div>
 
         </div>
@@ -832,41 +577,37 @@
     </div>
 
 
-    <!-- =====================================================
-         ПРОФИЛЬ
-    ===================================================== -->
+    <!-- ================================================= -->
+    <!-- ПРОФИЛЬ -->
+    <!-- ================================================= -->
 
-    <div
-        class="page"
-        id="profile-page"
-    >
+    <div class="page" id="profile-page">
 
         <div class="header">
 
-            <span class="logo">
+            <div class="logo">
                 <span class="slow">Slow</span>
                 <span class="gifts">Gifts</span>
-            </span>
+            </div>
 
             <div class="header-right">
 
                 <div class="balance">
-                    0
 
-                    <svg
-                        class="telegram-star"
-                        viewBox="0 0 24 24"
-                    >
+                    <span>0</span>
+
+                    <svg class="telegram-star" viewBox="0 0 24 24">
+
                         <path
                             fill="#ffd54f"
                             d="M12 1.8l2.75 5.57 6.15.89-4.45 4.34 1.05 6.13L12 15.84l-5.5 2.89 1.05-6.13L3.1 8.26l6.15-.89L12 1.8z"
                         />
+
                     </svg>
+
                 </div>
 
-                <div class="plus-button">
-                    +
-                </div>
+                <div class="plus-button">+</div>
 
             </div>
         </div>
@@ -924,9 +665,9 @@
 </div>
 
 
-<!-- =========================================================
-     НИЖНЯЯ НАВИГАЦИЯ
-========================================================= -->
+<!-- ================================================= -->
+<!-- НИЖНЯЯ НАВИГАЦИЯ -->
+<!-- ================================================= -->
 
 <div class="bottom-nav">
 
@@ -936,13 +677,8 @@
         data-page="home-page"
     >
 
-        <span class="nav-icon">
-            🏠
-        </span>
-
-        <span>
-            ГЛАВНАЯ
-        </span>
+        <span class="nav-icon">🏠</span>
+        <span>ГЛАВНАЯ</span>
 
     </button>
 
@@ -953,13 +689,8 @@
         data-page="games-page"
     >
 
-        <span class="nav-icon">
-            🎮
-        </span>
-
-        <span>
-            ИГРЫ
-        </span>
+        <span class="nav-icon">🎮</span>
+        <span>ИГРЫ</span>
 
         <span class="badge-dot"></span>
 
@@ -972,13 +703,8 @@
         data-page="bonuses-page"
     >
 
-        <span class="nav-icon">
-            🎁
-        </span>
-
-        <span>
-            БОНУСЫ
-        </span>
+        <span class="nav-icon">🎁</span>
+        <span>БОНУСЫ</span>
 
     </button>
 
@@ -989,13 +715,8 @@
         data-page="profile-page"
     >
 
-        <span class="nav-icon">
-            👤
-        </span>
-
-        <span>
-            ПРОФИЛЬ
-        </span>
+        <span class="nav-icon">👤</span>
+        <span>ПРОФИЛЬ</span>
 
     </button>
 
@@ -1004,17 +725,197 @@
 
 <script>
 
-    /* =====================================================
-       TELEGRAM WEB APP
-    ===================================================== */
+    /* ================================================= */
+    /* TELEGRAM */
+    /* ================================================= */
 
-    const tg = window.Telegram?.WebApp;
+    var tg = window.Telegram.WebApp;
 
-    if (tg) {
-        tg.ready();
-        tg.expand();
+    tg.expand();
+
+
+    /* ================================================= */
+    /* ПОЛЬЗОВАТЕЛЬ */
+    /* ================================================= */
+
+    var user = null;
+
+    if (tg.initDataUnsafe) {
+        user = tg.initDataUnsafe.user;
     }
 
 
-    /* =====================================================
-       TELEGRAM CH
+    /* ================================================= */
+    /* ПРОФИЛЬ */
+    /* ================================================= */
+
+    if (user) {
+
+        var usernameElement =
+            document.getElementById("profile-username");
+
+        if (user.username) {
+
+            usernameElement.textContent =
+                "@" + user.username;
+
+        } else if (user.first_name) {
+
+            usernameElement.textContent =
+                user.first_name;
+
+        }
+
+
+        if (user.photo_url) {
+
+            var avatar =
+                document.getElementById("profile-avatar");
+
+            avatar.innerHTML = "";
+
+            var image =
+                document.createElement("img");
+
+            image.src = user.photo_url;
+
+            image.alt = "Аватар";
+
+            avatar.appendChild(image);
+        }
+    }
+
+
+    /* ================================================= */
+    /* DAYS */
+    /* ================================================= */
+
+    var daysElement =
+        document.getElementById("days-count");
+
+    var firstVisit =
+        localStorage.getItem("slowGiftsFirstVisit");
+
+
+    if (!firstVisit) {
+
+        firstVisit =
+            String(Date.now());
+
+        localStorage.setItem(
+            "slowGiftsFirstVisit",
+            firstVisit
+        );
+    }
+
+
+    function updateDays() {
+
+        var start =
+            parseInt(firstVisit, 10);
+
+        var now =
+            Date.now();
+
+        var oneDay =
+            24 * 60 * 60 * 1000;
+
+        var days =
+            Math.floor(
+                (now - start) / oneDay
+            );
+
+        if (days < 0) {
+            days = 0;
+        }
+
+        daysElement.textContent =
+            String(days);
+    }
+
+
+    updateDays();
+
+    setInterval(
+        updateDays,
+        60000
+    );
+
+
+    /* ================================================= */
+    /* НАВИГАЦИЯ */
+    /* ================================================= */
+
+    var navItems =
+        document.querySelectorAll(".nav-item");
+
+    var pages =
+        document.querySelectorAll(".page");
+
+
+    navItems.forEach(function(item) {
+
+        item.addEventListener("click", function() {
+
+            var pageId =
+                item.getAttribute("data-page");
+
+
+            /* Активная кнопка */
+
+            navItems.forEach(function(nav) {
+
+                nav.classList.remove("active");
+
+            });
+
+            item.classList.add("active");
+
+
+            /* Страницы */
+
+            pages.forEach(function(page) {
+
+                page.classList.remove("active");
+
+            });
+
+
+            var selectedPage =
+                document.getElementById(pageId);
+
+
+            if (selectedPage) {
+
+                selectedPage.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+
+    /* ================================================= */
+    /* TELEGRAM-КАНАЛ */
+    /* ================================================= */
+
+    var telegramBonus =
+        document.getElementById("telegram-bonus");
+
+
+    telegramBonus.addEventListener(
+        "click",
+        function() {
+
+            tg.openTelegramLink(
+                "https://t.me/slowngifts"
+            );
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
